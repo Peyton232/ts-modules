@@ -12,7 +12,7 @@ export function ValidateUserName(username: string): Error | true{
         return new ErrorInvalidLength(3);
 
     const processed: string = username.toLowerCase().replace(/\s/g, '');
-    const matches: RegExpMatchArray = processed.match('^[a-zA-Z0-9]+$');
+    const matches = processed.match('^[a-zA-Z0-9]+$');
     return matches?.index === 0 ? true : new ErrorSpecialCharacters();
 }
 
